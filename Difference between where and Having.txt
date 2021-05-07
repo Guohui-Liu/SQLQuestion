@@ -26,3 +26,37 @@ SELECT * FROM Course HAVING Id = 102;
 5) Since WHERE clause is evaluated before groups are formed, it evaluates for per row. 
 On the other hand, the HAVING clause is evaluated after groups are formed hence it evaluates for per group. 
 
+Union will give the unique records but union all will not
+Union will sort the data based on the first column in the first select statement
+Union all is faster
+Union can not be used inside a recursive CTE
+
+Benefits of CTE
+
+Using CTE improves the readability and makes maintenance of complex queries easy.
+The query can be divided into separate, simple, logical building blocks which can be then used to build more complex CTEs until final result set is generated.
+CTE can be defined in functions, stored procedures, triggers or even views.
+After a CTE is defined, it can be used as a Table or a View and can SELECT, INSERT, UPDATE or DELETE Data.
+
+
+ews can be indexed but CTE can't. So this is one important point.
+
+CTE work excellent on tree hierarchyi.e. recursive
+Also, consider views when dealing with complex queries. Views being a physical object on database (but does not store data physically) 
+and can be used on multiple queries, thus provide flexibility and centralized approach. 
+CTE, on the other hand are temporary and will be created when they are used; that's why they are called as inline view.
+
+UNION
+ 
+The UNION command is used to select related information from two tables, which is like a JOIN command. 
+However, when using UNION command, all the selected columns need to be of the same data type. With UNION, only distinct values are selected.
+ 
+UNION ALL
+ 
+UNION ALL command is equal to UNION command, except that UNION ALL selects all the values.
+ 
+The difference between Union and Union all is that Union all will not eliminate duplicate rows, 
+instead it just pulls all the rows from all the tables fitting your query specifics and combines them into a table.
+ 
+A UNION statement effectively does a SELECT DISTINCT on the results set. 
+If you know that all the records returned are unique from your union, use UNION ALL instead, it gives faster results.
